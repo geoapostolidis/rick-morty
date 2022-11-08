@@ -19,18 +19,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { RouterView, useRouter, useRoute } from "vue-router";
 import { Layout, LayoutContent, LayoutHeader } from 'ant-design-vue';
 
 const route = useRoute()
 const router = useRouter()
 
-const selectedKeys = ref([route.path])
+var selectedKeys = ref([route.path])
+watch(() => route.path, (value) => selectedKeys.value = [value])
+const selectMenu = ( { key }) =>  router.push(key)
 
-const selectMenu = ( { key }) => {
-  router.push(key)
-}
 </script>
 
 <style scoped>
