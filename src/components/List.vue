@@ -28,7 +28,7 @@
               </a-col>
             </a-row>
           </template>
-          <template #avatar><a-avatar :src="loading ? fallback : item.image" :size="70" shape="square" /></template>
+          <template #avatar><a-avatar :src="loading ? fallback : item.image" crossOrigin="anonymous" :size="70" shape="square" /></template>
         </a-list-item-meta>
       </a-list-item>
     </template>
